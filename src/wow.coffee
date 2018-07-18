@@ -202,8 +202,7 @@ class @WOW
   )()
 
   resetStyle: ->
-    box.style.visibility = 'visible' for box in @boxes
-
+    box.style.opacity = '1' for box in @boxes
   resetAnimation: (event) =>
     if event.type.toLowerCase().indexOf('animationend') >= 0
       target = event.target || event.srcElement
@@ -211,8 +210,7 @@ class @WOW
 
   customStyle: (box, hidden, duration, delay, iteration) ->
     @cacheAnimationName(box) if hidden
-    box.style.visibility = if hidden then 'hidden' else 'visible'
-
+    box.style.opacity = if hidden then '0' else '1';
     @vendorSet box.style, animationDuration: duration if duration
     @vendorSet box.style, animationDelay: delay if delay
     @vendorSet box.style, animationIterationCount: iteration if iteration

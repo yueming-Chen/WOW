@@ -1,6 +1,7 @@
 <!doctype html>
 
 <html lang="en">
+
 <head>
   <meta charset="utf-8">
   <title>WOW</title>
@@ -8,7 +9,7 @@
   <link rel="stylesheet" href="css/site.css">
   <style>
     .wow:first-child {
-      visibility: hidden;
+      opacity: 0;
     }
   </style>
   <!--[if IE]>
@@ -35,18 +36,19 @@
     wow = new WOW(
       {
         animateClass: 'animated',
-        offset:       100,
-        callback:     function(box) {
+        offset: 100,
+        callback: function (box) {
           console.log("WOW: animating <" + box.tagName.toLowerCase() + ">")
         }
       }
     );
     wow.init();
-    document.getElementById('moar').onclick = function() {
+    document.getElementById('moar').onclick = function () {
       var section = document.createElement('section');
       section.className = 'section--purple wow fadeInDown';
       this.parentNode.insertBefore(section, this);
     };
   </script>
 </body>
+
 </html>
